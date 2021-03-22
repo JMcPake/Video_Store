@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class VideoStore {
 
-    private ArrayList<Video> storeInventory;
+    private ArrayList<Video> storeInventory = new ArrayList<Video>();
 
     /**
      * This adds a new video to the store's inventory
@@ -11,11 +11,17 @@ public class VideoStore {
      */
     public boolean addVideo(String title){
 
-        for (Video videos:this.storeInventory){
-            if(videos.getTitle().equals(title)){
-                System.out.println("Unsuccessful, a video with that title already exists.");
-                return false;
-            }
+        if (this.storeInventory == null){
+            System.out.println("Successful, " + title + " added.");
+            this.storeInventory.add(new Video(title));
+            return true;
+        }
+
+        for (Video videos:this.storeInventory) {
+                if (videos.getTitle().equals(title)) {
+                    System.out.println("Unsuccessful, a video with that title already exists.");
+                    return false;
+                }
         }
 
         System.out.println("Successful, " + title + " added.");

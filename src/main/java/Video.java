@@ -12,7 +12,7 @@ public class Video {
 
     private String videoTitle;
     private boolean videoCheckedOut;
-    private ArrayList<Integer> videoRatings;
+    private ArrayList<Integer> videoRatings = new ArrayList<Integer>();
 
     /**
      * A Constructor for the Video class
